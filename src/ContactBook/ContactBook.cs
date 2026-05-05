@@ -82,6 +82,7 @@ public class ContactBook
             + "{3, " + -phoneCol + "}  "
             + "{4, " + -emailCol + "}  ",
             "#", "First Name", "Last Name", "Phone", "Email");
+            
             Console.WriteLine(new string('-', (indexCol+2+fnameCol+2+lnameCol+2+phoneCol+2+emailCol)));
             
             int n = allContacts.Count;
@@ -123,7 +124,7 @@ public class ContactBook
 
     private string GetInput()
     {
-        return "";
+        return Console.ReadLine()!.ToUpper();
     }
 
     private bool IsValidInput(string input)
