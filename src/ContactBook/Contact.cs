@@ -14,7 +14,6 @@ public class Contact : IEquatable<Contact>
       SetPhone(phone);
       SetEmail(email);         
     }
-
     public string GetFName()
     {
         return fname;
