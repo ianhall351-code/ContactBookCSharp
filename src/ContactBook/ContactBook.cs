@@ -1,3 +1,4 @@
+using System.Diagnostics.Tracing;
 using System.Drawing;
 
 namespace ContactBook;
@@ -222,16 +223,42 @@ public class ContactBook
     }
     private void PageSize()
     {
-        PageSize(ref size);
+        PageSize(ref page, ref size);
     }
-    private void PageSize(ref int size)
+    private void PageSize(ref int page, ref int size)
     {
         int max = Console.WindowHeight - 10;
         size = GetInt("Enter page size", 1, max);
+        page = 1;
     }
     private void CreateContact()
     {
+        Console.Clear();
+        Console.WriteLine(new string('#', 80));
         Console.WriteLine("Create Contact");
+        Console.WriteLine(new string('#', 80));
+        Console.WriteLine();
+
+        Console.Write("Enter first name: ");
+        string fname = Console.ReadLine()!;
+        Console.Write("Enter last name: ");
+        string lname = Console.ReadLine()!;
+        Console.Write("Enter phone: ");
+        string phone = Console.ReadLine()!;
+        Console.Write("Enter email: ");
+        string email = Console.ReadLine()!;
+
+        if(Confirm("Do you want to create this contact?", YES))
+        {
+            Contact c = new Contact(fname, lname, phone, email);
+            allContacts.Add(c);
+
+            Console.WriteLine("Operation succseful: Contact created.");
+        }
+        else
+        {
+            Console.WriteLine("Operation cancelled: Contact not created.");
+        }
     }
 
     private void ReviewContact()
