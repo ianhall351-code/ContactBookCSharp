@@ -115,5 +115,7 @@ public static class ContactSeed
         new Contact("Sawyer", "Hamilton", "939-555-0156", ""),
         new Contact("Piper", "Graham", "787-555-0178", "piper.graham@outlook.com"),
         new Contact("Declan", "Sullivan", "939-555-0134", "declan.sullivan@yahoo.com"),
+        new Contact("Declan", "Sullivan", "939-555-0134", "declan.sullivan@yahoo.com"),
+        new Contact("Pipo", "", "787-555-0178", ""),
     };
 }
